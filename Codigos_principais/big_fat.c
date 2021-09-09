@@ -32,7 +32,8 @@ void* threadCalc(void* param){
     args *info = (args*) param; 
     int start = 1 + (info->thread*1000);		// define o valor inicial do loop de acordo com a thread
     int end = (info->thread + 1)*1000;			// define o valor final do loop de acordo com a thread
-    if(info->number%1000 != 0 && (info->thread == info->totalThreads - 1)) end = start - 1 + info->number%1000;
+    if(info->number%1000 != 0 && (info->thread == info->totalThreads - 1))
+        end = start - 1 + info->number%1000;
     
     printf("inicializando thread %d | calculo de %d a %d\n", info->thread, start, end);
     
